@@ -20,7 +20,9 @@
 
 % To do
 % -----
-% - Check with Eyelink
+% - fix error with quitting
+% - fix error with checkfix after restart (idea draw fixation on screen to
+% see where the tracker think i am)
 % - code analysis in Python
 % - do video
 

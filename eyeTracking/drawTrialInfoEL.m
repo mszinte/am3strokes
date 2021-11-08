@@ -80,10 +80,10 @@ switch var1
     case 7;stroke_coord =   const.mot_coord{var2,3} + jitter_coord;
 end
 
-eyeLinkDrawBox(fix_coord(1),fix_coord(2),const.fix_rad*2,const.fix_rad*2,2,frameCol,ftCol);
-%eyeLinkDrawBox(fix_coord(1),fix_coord(2),const.stoke_rad*2,const.stoke_rad*2,2,frameCol,ftCol);
-eyeLinkDrawBox(stroke_coord(1),stroke_coord(2),const.fix_rad*2,const.fix_rad*2,2,frameCol,ftCol);
-%eyeLinkDrawBox(stroke_coord(1),stroke_coord(2),const.stoke_rad*2,const.stoke_rad*2,2,frameCol,ftCol);
+eyeLinkDrawBox(fix_coord(1),fix_coord(2),const.checkfix_rad*2,const.checkfix_rad*2,2,frameCol,ftCol);
+eyeLinkDrawBox(fix_coord(1),fix_coord(2),const.stoke_rad*2,const.stoke_rad*2,2,frameCol,ftCol);
+eyeLinkDrawBox(stroke_coord(1),stroke_coord(2),const.checkfix_rad*2,const.checkfix_rad*2,2,frameCol,ftCol);
+eyeLinkDrawBox(stroke_coord(1),stroke_coord(2),const.stoke_rad*2,const.stoke_rad*2,2,frameCol,ftCol);
 
 WaitSecs(0.1);
 
