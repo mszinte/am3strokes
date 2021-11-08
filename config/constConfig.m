@@ -25,7 +25,7 @@ rng('shuffle');
 %% Colors
 const.white                 =   [255,255,255];                                                              % White
 const.black                 =   [0,0,0];                                                                    % Black
-const.gray                  =   [100,100,100];                                                              % Gray
+const.gray                  =   [90,90,90];                                                              % Gray
 const.background_color      =   const.gray;                                                                 % Background color
 
 %% Time parameters
@@ -46,7 +46,7 @@ const.post_stroke_steps     =   6;                                              
 const.post_stroke_dur       =   linspace(const.post_stroke_min_dur,const.post_stroke_max_dur, const.post_stroke_steps); % Post-stroke duration (in seconds)
 const.post_stroke_nbf       =   round(const.post_stroke_dur/scr.frame_duration);                            % Post-stroke duration (in frames)
 
-const.post_saccade_dur      =   0.500;                                                                      % Post-saccade duration (in seconds)
+const.post_saccade_dur      =   1.000;                                                                      % Post-saccade duration (in seconds)
 const.post_saccade_nbf      =   round(const.post_saccade_dur/scr.frame_duration);                           % Post-saccade duration (in frames)
 
 %% Space parameter
@@ -88,8 +88,8 @@ const.motion_jitter         =   linspace(-const.jitter_amp,const.jitter_amp,cons
 
 
 %% Eye-tracking configurations
-const.fix_rad_dva           =   2;                                                                          % fixation tolerance radius (in dva)
-const.fix_rad               =   vaDeg2pix(const.fix_rad_dva,scr);                                           % fixation tolerance radius (in pixels)
+const.checkfix_rad_dva      =   2;                                                                          % fixation tolerance radius (in dva)
+const.checkfix_rad          =   vaDeg2pix(const.checkfix_rad_dva,scr);                                      % fixation tolerance radius (in pixels)
 const.timeOut               =   2;                                                                          % maximum fixation check time (in seconds)
 const.tCorMin               =   0.200;                                                                      % minimum correct fixation time (in seconds)
 

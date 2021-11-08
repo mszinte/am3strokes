@@ -23,14 +23,14 @@ function [fix,expDes]=checkFix(scr,const,expDes,my_key,t)
 
 % Eye movement config
 % -------------------
-fixRad  = const.fix_rad;     % fixation tolerance radius
+fixRad  = const.checkfix_rad;% fixation tolerance radius
 timeout = const.timeOut;     % maximum fixation check time
 tCorMin = const.tCorMin;     % minimum correct fixation time
 
 rand3 = expDes.expMat(t,7);  % x spatial jitter value
 rand4 = expDes.expMat(t,8);  % y spatial jitter value
 
-jitter_coord = [const.motion_jitter(rand3),const.motion_jitter(rand4)];
+jitter_coord = [const.motion_jitter(rand3),-const.motion_jitter(rand4)];
 fix_coord = const.fix_coord + jitter_coord;
 
 % Eye data coordinates
@@ -41,64 +41,60 @@ if const.tracker
     Eyelink('message','%s',log_txt);
 end
 
-if const.tracker
-    tstart = GetSecs;
-    fix = 0;
-    corStart = 0;
-    tCor = 0;
-    t = tstart;
+tstart = GetSecs;
+fix = 0;
+corStart = 0;
+tCor = 0;
+t = tstart;
 
-    while ((t-tstart)<timeout && tCor<= tCorMin)
-        
-        Screen('FillRect',scr.main,const.background_color);
-        
-        [x,y] = getCoord(scr,const);
-        if sqrt((x-fix_coord(1))^2+(y-fix_coord(2))^2) < fixRad
-            fix = 1;
-        else
-            fix = 0;
-        end
-        
-        % Draw fixation target
-        Screen('DrawDots',scr.main,fix_coord,const.stoke_rad*2, const.white, [], 2);
-        
-        Screen('Flip',scr.main);
-        if const.mkVideo
-            expDes.vid_num          =   expDes.vid_num + 1;
-            image_vid               =   Screen('GetImage', scr.main);
-            imwrite(image_vid,sprintf('%s_frame_%i.png',const.movie_image_file,expDes.vid_num));
-            writeVideo(const.vid_obj,image_vid);
-        end
-        
-        if fix == 1 && corStart == 0
-            tCorStart = GetSecs;
-            corStart = 1;
-        elseif fix == 1 && corStart == 1
-            tCor = GetSecs-tCorStart;
-        else
-            corStart = 0;
-        end
-        t = GetSecs;
+while ((t-tstart)<timeout && tCor<= tCorMin)
 
-        % Check keyboard
-        keyPressed              =   0;
-        keyCode                 =   zeros(1,my_key.keyCodeNum);
-        for keyb = 1:size(my_key.keyboard_idx,2)
-            [keyP, keyC]            =   KbQueueCheck(my_key.keyboard_idx(keyb));
-            keyPressed              =   keyPressed+keyP;
-            keyCode                 =   keyCode+keyC;
-        end
-        
-        if keyPressed
-            if keyCode(my_key.escape)
-                if const.expStart == 0
-                    overDone(const,my_key)
-                end
+    Screen('FillRect',scr.main,const.background_color);
+
+    [x,y] = getCoord(scr,const)
+    if sqrt((x-fix_coord(1))^2+(y-fix_coord(2))^2) < fixRad
+        fix = 1;
+    else
+        fix = 0;
+    end
+
+    % Draw fixation target
+    Screen('DrawDots',scr.main,fix_coord,const.stoke_rad*2, const.white, [], 2);
+
+    Screen('Flip',scr.main);
+    if const.mkVideo
+        expDes.vid_num          =   expDes.vid_num + 1;
+        image_vid               =   Screen('GetImage', scr.main);
+        imwrite(image_vid,sprintf('%s_frame_%i.png',const.movie_image_file,expDes.vid_num));
+        writeVideo(const.vid_obj,image_vid);
+    end
+
+    if fix == 1 && corStart == 0
+        tCorStart = GetSecs;
+        corStart = 1;
+    elseif fix == 1 && corStart == 1
+        tCor = GetSecs-tCorStart;
+    else
+        corStart = 0;
+    end
+    t = GetSecs;
+
+    % Check keyboard
+    keyPressed              =   0;
+    keyCode                 =   zeros(1,my_key.keyCodeNum);
+    for keyb = 1:size(my_key.keyboard_idx,2)
+        [keyP, keyC]            =   KbQueueCheck(my_key.keyboard_idx(keyb));
+        keyPressed              =   keyPressed+keyP;
+        keyCode                 =   keyCode+keyC;
+    end
+
+    if keyPressed
+        if keyCode(my_key.escape)
+            if const.expStart == 0
+                 overDone(const,my_key)
             end
         end
     end
-else 
-    fix = 1;
 end
 
 end
