@@ -1,6 +1,6 @@
-function drawTrialInfoEL(scr,const,expDes,t)
+function drawTrialInfoEL(const,expDes,t)
 % ----------------------------------------------------------------------
-% drawTrialInfoEL(scr,const,expDes,t)
+% drawTrialInfoEL(const,expDes,t)
 % ----------------------------------------------------------------------
 % Goal of the function :
 % Draw on the eyelink display the experiment configuration
@@ -81,9 +81,9 @@ switch var1
 end
 
 eyeLinkDrawBox(fix_coord(1),fix_coord(2),const.fix_rad*2,const.fix_rad*2,2,frameCol,ftCol);
-eyeLinkDrawBox(fix_coord(1),fix_coord(2),const.stoke_rad*2,const.stoke_rad*2,2,frameCol,ftCol);
+%eyeLinkDrawBox(fix_coord(1),fix_coord(2),const.stoke_rad*2,const.stoke_rad*2,2,frameCol,ftCol);
 eyeLinkDrawBox(stroke_coord(1),stroke_coord(2),const.fix_rad*2,const.fix_rad*2,2,frameCol,ftCol);
-eyeLinkDrawBox(stroke_coord(1),stroke_coord(2),const.stoke_rad*2,const.stoke_rad*2,2,frameCol,ftCol);
+%eyeLinkDrawBox(stroke_coord(1),stroke_coord(2),const.stoke_rad*2,const.stoke_rad*2,2,frameCol,ftCol);
 
 WaitSecs(0.1);
 
