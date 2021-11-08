@@ -25,7 +25,7 @@ rng('shuffle');
 %% Colors
 const.white                 =   [255,255,255];                                                              % White
 const.black                 =   [0,0,0];                                                                    % Black
-const.gray                  =   [128,128,128];                                                              % Gray
+const.gray                  =   [100,100,100];                                                              % Gray
 const.background_color      =   const.gray;                                                                 % Background color
 
 %% Time parameters
@@ -50,7 +50,9 @@ const.post_saccade_dur      =   0.500;                                          
 const.post_saccade_nbf      =   round(const.post_saccade_dur/scr.frame_duration);                           % Post-saccade duration (in frames)
 
 %% Space parameter
-const.fix_coord             =   [scr.x_mid,scr.y_mid];                                                      % Initial fixation target position
+const.shift_fix_y_dva       =   5;                                                                          % Shift up because of screen defect (in dva)
+const.shift_fix_y           =   vaDeg2pix(const.shift_fix_y_dva,scr);                                       % Shift up because of screen defect (in pixels)
+const.fix_coord             =   [scr.x_mid,scr.y_mid-const.shift_fix_y];                                    % Initial fixation target position
 const.stoke_rad_dva         =   0.25;                                                                       % Stroke radius (in dva)
 const.stoke_rad             =   vaDeg2pix(const.stoke_rad_dva,scr);                                         % Stroke radius (in pixels)
 const.motion_amp_dva        =   1;                                                                          % Motion amplitude (in dva)
@@ -58,7 +60,7 @@ const.motion_amp            =   vaDeg2pix(const.motion_amp_dva,scr);            
 
 const.mot_ecc_x_dva         =   5;                                                                          % Motion x position ecc
 const.mot_ecc_x             =   vaDeg2pix(const.mot_ecc_x_dva,scr);                                          
-const.mot_ctr_y_dva         =   -2;                                                                         % Motion center y position
+const.mot_ctr_y_dva         =   3;                                                                         % Motion center y position
 const.mot_ctr_y             =   vaDeg2pix(const.mot_ctr_y_dva,scr);
 
 const.mot_coord_x           =   [-const.mot_ecc_x, const.mot_ecc_x];                                        % Motion x coordinates [left, right]
