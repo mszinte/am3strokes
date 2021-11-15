@@ -50,13 +50,16 @@ t = tstart;
 while ((t-tstart)<timeout && tCor<= tCorMin)
 
     Screen('FillRect',scr.main,const.background_color);
-
-    [x,y] = getCoord(scr,const)
+    
+    
+    [x,y] = getCoord(scr,const);
     if sqrt((x-fix_coord(1))^2+(y-fix_coord(2))^2) < fixRad
         fix = 1;
     else
         fix = 0;
     end
+    
+    Screen('DrawDots',scr.main,[x,y],const.stoke_rad*2, [100,0,0], [], 2);
 
     % Draw fixation target
     Screen('DrawDots',scr.main,fix_coord,const.stoke_rad*2, const.white, [], 2);
@@ -91,7 +94,8 @@ while ((t-tstart)<timeout && tCor<= tCorMin)
     if keyPressed
         if keyCode(my_key.escape)
             if const.expStart == 0
-                 overDone(const,my_key)
+                 overDone(const,my_key);
+                 error('Escape button pressed');
             end
         end
     end

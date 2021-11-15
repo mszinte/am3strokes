@@ -59,7 +59,8 @@ while ~push_button
             push_button             =   1;
         elseif keyCode(my_key.escape)
             if const.expStart == 0
-                overDone(const,my_key)
+                overDone(const,my_key);
+                error('Escape button pressed');
             end
         end
     end
