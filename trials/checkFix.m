@@ -58,9 +58,7 @@ while ((t-tstart)<timeout && tCor<= tCorMin)
     else
         fix = 0;
     end
-    
-    Screen('DrawDots',scr.main,[x,y],const.stoke_rad*2, [100,0,0], [], 2);
-
+   
     % Draw fixation target
     Screen('DrawDots',scr.main,fix_coord,const.stoke_rad*2, const.white, [], 2);
 
