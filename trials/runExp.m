@@ -133,7 +133,10 @@ while ~expDone
                         eyeLinkClearScreen(el.bgCol);
                         eyeLinkDrawText(scr.x_mid,scr.y_mid,el.txtCol,'CALIBRATION INSTRUCTION - PRESS SPACE');
                         instructionsIm(scr,const,my_key,sprintf('Calibration'),0);
-                         EyelinkDoTrackerSetup(el);
+                        EyelinkDoTrackerSetup(el);
+                        Eyelink('startrecording');
+                        key=1;
+                        while key ~=  0;key = EyelinkGetKey(el);end
                     end
                     for keyb = 1:size(my_key.keyboard_idx,2)
                         KbQueueFlush(my_key.keyboard_idx(keyb));
