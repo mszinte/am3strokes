@@ -15,7 +15,7 @@ function [const] = runExp(scr,const,expDes,el,my_key)
 % const : struct containing constant configurations
 % ----------------------------------------------------------------------
 % Function created by Martin SZINTE (martin.szinte@gmail.com)
-% Last update : 08 / 11 / 2020
+% Last update : 15 / 11 / 2020
 % Project :     AM3strokes
 % ----------------------------------------------------------------------
 
@@ -102,62 +102,60 @@ end
 
 % Main trial loop
 % ---------------
-expDone = 0;
 endJ = size(expDes.expMat,1);
 if const.mkVideo;endJ = 1;end
 
-while ~expDone
-    for t = 1:endJ
-        trialDone = 0;
-        while ~trialDone
+for t = 1:endJ
+    trialDone = 0;
+    while ~trialDone
+        
+        if const.tracker
+            Eyelink('command', 'record_status_message ''TRIAL %d / %d''', t,endJ);
+            Eyelink('message', 'TRIALID %d', t);
+        end
+        
+        fix = 0;
+        while fix ~= 1
             
-            if const.tracker
-                Eyelink('command', 'record_status_message ''TRIAL %d / %d''', t,endJ);
-                Eyelink('message', 'TRIALID %d', t);
-            end
-
-            fix = 0;
-            while fix ~= 1
-                
-                % Check fixation
-                if fix ~= 1
-                    if const.tracker
-                        drawTrialInfoEL(const,expDes,t);
-                    end
-                    [fix,expDes] = checkFix(scr,const,expDes,my_key,t);
+            % Check fixation
+            if fix ~= 1
+                if const.tracker
+                    drawTrialInfoEL(const,expDes,t);
                 end
-                
-                % Calib problems
-                if fix ~= 1
-                    if const.tracker
-                        eyeLinkClearScreen(el.bgCol);
-                        eyeLinkDrawText(scr.x_mid,scr.y_mid,el.txtCol,'CALIBRATION INSTRUCTION - PRESS SPACE');
-                        instructionsIm(scr,const,my_key,sprintf('Calibration'),0);
-                        EyelinkDoTrackerSetup(el);
-                        Eyelink('startrecording');
-                        key=1;
-                        while key ~=  0;key = EyelinkGetKey(el);end
-                    end
-                    for keyb = 1:size(my_key.keyboard_idx,2)
-                        KbQueueFlush(my_key.keyboard_idx(keyb));
-                    end
-                    
-                end
+                [fix,expDes] = checkFix(scr,const,expDes,my_key,t);
             end
             
-            % Run Trial
-            if fix 
-                [expDes] = runTrials(scr,const,expDes,my_key,t);
-                trialDone = 1;
+            % Calib problems
+            if fix ~= 1
+                if const.tracker
+                    eyeLinkClearScreen(el.bgCol);
+                    eyeLinkDrawText(scr.x_mid,scr.y_mid,el.txtCol,'CALIBRATION INSTRUCTION - PRESS SPACE');
+                    instructionsIm(scr,const,my_key,sprintf('Calibration'),0);
+                    EyelinkDoTrackerSetup(el);
+                    Eyelink('startrecording');
+                    key=1;
+                    while key ~=  0;key = EyelinkGetKey(el);end
+                end
+                for keyb = 1:size(my_key.keyboard_idx,2)
+                    KbQueueFlush(my_key.keyboard_idx(keyb));
+                end
+                
             end
+        end
+        
+        % Run Trial
+        if fix
+            [expDes] = runTrials(scr,const,expDes,my_key,t);
+            trialDone = 1;
         end
     end
 end
 
+
 % Compute/Write mean/std behavioral data
 % --------------------------------------
 behav_txt_head{1}       =   'onset';                        behav_mat_res{1}        =   expDes.expMat(:,9);
-behav_txt_head{2}       =   'duration';                     behav_mat_res{2}        = 	expDes.expMat(:,10) - expDes.blockMat(:,9);
+behav_txt_head{2}       =   'duration';                     behav_mat_res{2}        = 	expDes.expMat(:,10) - expDes.expMat(:,9);
 behav_txt_head{3}       =   'run_number';                   behav_mat_res{3}        = 	expDes.expMat(:,1);
 behav_txt_head{4}       =   'trial_number';                 behav_mat_res{4}        = 	expDes.expMat(:,2);
 behav_txt_head{5}       =   'trial_sequence';               behav_mat_res{5}        = 	expDes.expMat(:,3);

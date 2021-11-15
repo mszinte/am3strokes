@@ -81,9 +81,9 @@ switch var1
 end
 
 eyeLinkDrawBox(fix_coord(1),fix_coord(2),const.checkfix_rad*2,const.checkfix_rad*2,2,frameCol,ftCol);
-eyeLinkDrawBox(fix_coord(1),fix_coord(2),const.stoke_rad*2,const.stoke_rad*2,2,frameCol,ftCol);
+eyeLinkDrawBox(fix_coord(1),fix_coord(2),const.stoke_rad*2,const.stoke_rad*2,2,bgCol,bgCol);
 eyeLinkDrawBox(stroke_coord(1),stroke_coord(2),const.checkfix_rad*2,const.checkfix_rad*2,2,frameCol,ftCol);
-eyeLinkDrawBox(stroke_coord(1),stroke_coord(2),const.stoke_rad*2,const.stoke_rad*2,2,frameCol,ftCol);
+eyeLinkDrawBox(stroke_coord(1),stroke_coord(2),const.stoke_rad*2,const.stoke_rad*2,2,bgCol,bgCol);
 
 WaitSecs(0.1);
 
