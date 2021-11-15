@@ -72,7 +72,7 @@ end
 % Close Psychtoolbox screen
 % -------------------------
 ShowCursor;
-Screen('CloseAll');
+sca
 
 % Print block duration
 % --------------------
