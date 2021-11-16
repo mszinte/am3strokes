@@ -12,7 +12,7 @@ function main(const)
 % none
 % ----------------------------------------------------------------------
 % Function created by Martin SZINTE (martin.szinte@gmail.com)
-% Last update : 03 / 11 / 2020
+% Last update : 16 / 11 / 2020
 % Project :     AM3strokes
 % ----------------------------------------------------------------------
 
@@ -49,11 +49,14 @@ priorityLevel = MaxPriority(scr.main);Priority(priorityLevel);
 el = [];
 if const.tracker
     [el] = initEyeLink(scr,const);
+    write_meta(scr,const,el)
 end
+
 
 % Trial runner
 % ------------
 [const] = runExp(scr,const,expDes,el,my_key);
+
 
 % End
 % ---

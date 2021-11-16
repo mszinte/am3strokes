@@ -37,6 +37,7 @@ el.fixation_rim_color           = const.background_color;
 el.fixation_color               = const.white;
 el.txtCol                       = 15;
 el.bgCol                        = 0;
+el.samp_rate                    = 1000;
 
 % Change button to use the button box in the scanner
 el.uparrow      =   KbName('UpArrow');                  % Pupil threshold increase
@@ -95,7 +96,7 @@ Eyelink('command','saccade_velocity_threshold = 30');
 Eyelink('command','saccade_acceleration_threshold = 9500');
 Eyelink('command','saccade_motion_threshold = 0.15');
 Eyelink('command','use_ellipse_fitter =  NO');
-Eyelink('command','sample_rate = %d',1000);
+Eyelink('command','sample_rate = %d',);
 
 % % Personal calibrations
 rng('default');rng('shuffle');
