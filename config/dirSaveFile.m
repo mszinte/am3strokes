@@ -33,8 +33,10 @@ const.eyetrack_output_file  =   sprintf('data/%s/eyetrack/%s_task-%s_%s',const.s
 const.add_output_file       =   sprintf('data/%s/add/%s_task-%s_%s',const.sjct,const.sjct,const.cond1_txt,const.run_txt);
 
 % Eye data
-const.eyelink_temp_file =   'XX.edf';
-const.eyelink_local_file=   sprintf('%s_eyeData.edf',const.eyetrack_output_file);
+const.eyelink_temp_file         =   'XX.edf';
+const.eyelink_local_file        =   sprintf('%s_eyetrack.edf',const.eyetrack_output_file);
+const.eyelink_local_meta        =   sprintf('%s_eyetrack.json',const.eyetrack_output_file);
+const.eyelink_local_meta_fid    =   fopen(const.eyelink_local_meta, 'w');
 
 % Behavioral data
 const.behav_file        =   sprintf('%s_events.tsv',const.dat_output_file);

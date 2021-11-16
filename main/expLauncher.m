@@ -20,8 +20,8 @@
 
 % To do
 % -----
-% - write json files for eyetrack folder
-% - check duration
+% - write conversion of data to asc on windows
+% - check duration of a run
 % - collect data on me
 % - code analysis in Python
 % - do video
