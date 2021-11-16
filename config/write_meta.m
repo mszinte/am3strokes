@@ -24,7 +24,7 @@ json_el.InstitutionAdress       = "12 avenue Jean Moulin, 13008 Marseille, Franc
 json_el.Manufacturer            = "SR-Research";
 json_el.ManufacturersModelName  = "EYELINK II CL v5.12 May 12 2017";
 json_el.TaskDescription         = "Saccade to static and 3 strokes apparent motion target";
-json_el.Instructions            = "When the fixation dot disappears, move your eyes towards the last dot shown in periphery.";
+json_el.Instructions            = "When the fixation dot disappears, move your eyes towards the last dot shown in periphery.";
 json_el.SamplingFrequency       = el.samp_rate;
 json_el.SampleCoordinateUnit    = "pixel";
 json_el.SampleCoordinateSystem  = "gaze-on-screen";
@@ -39,5 +39,5 @@ json_el.PupilPositionType       = "raw pupil position on screen";
 
 encoded_json = jsonencode(json_el); 
 fprintf(const.eyelink_local_meta_fid, prettyjson(encoded_json)); 
-fclose(fid);
+fclose(const.eyelink_local_meta_fid);
 end

@@ -13,7 +13,7 @@ function overDone(const,my_key)
 % none
 % ----------------------------------------------------------------------
 % Function created by Martin SZINTE (martin.szinte@gmail.com)
-% Last update : 08 / 11 / 2020
+% Last update : 11 / 11 / 2020
 % Project :     AM3strokes
 % ----------------------------------------------------------------------
 
@@ -41,6 +41,7 @@ if const.tracker
     
     if statRecFile ~= 0
         fprintf(1,'\n\n\tEyelink EDF file correctly transfered\n');
+        
     else
         fprintf(1,'\n\n\tError in Eyelink EDF file transfer\n');
         statRecFile2 = Eyelink('ReceiveFile',const.eyelink_temp_file,const.eyelink_temp_file);
@@ -50,6 +51,8 @@ if const.tracker
             fprintf(1,'\n\n\t!!!!! Error in Eyelink EDF file transfer !!!!!\n');
         end
     end
+    
+    
 end
 
 % Close link with eye tracker
@@ -67,6 +70,13 @@ if const.tracker
     oldDir = const.eyelink_temp_file;
     newDir = const.eyelink_local_file;
     movefile(oldDir,newDir);
+    if ispc
+        fprintf(1,'\n\tConverting EDF file to ASC\n');
+        [~,~] = system(sprintf('%s %s',const.edf2asc,newDir));
+        oldDir = const.eyelink_local_file;
+        newDir = const.eyelink_local_file_end;
+        movefile(oldDir,newDir);
+    end
 end
 
 % Close Psychtoolbox screen

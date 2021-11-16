@@ -96,7 +96,7 @@ Eyelink('command','saccade_velocity_threshold = 30');
 Eyelink('command','saccade_acceleration_threshold = 9500');
 Eyelink('command','saccade_motion_threshold = 0.15');
 Eyelink('command','use_ellipse_fitter =  NO');
-Eyelink('command','sample_rate = %d',);
+Eyelink('command','sample_rate = %d', el.samp_rate);
 
 % % Personal calibrations
 rng('default');rng('shuffle');

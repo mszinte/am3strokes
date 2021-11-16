@@ -88,6 +88,7 @@ const.motion_jitter         =   linspace(-const.jitter_amp,const.jitter_amp,cons
 
 
 %% Eye-tracking configurations
+const.edf2asc               =   'C:\Experiments\am3strokes\stats\edf2asc.exe';                              % edf2asc directory
 const.checkfix_rad_dva      =   2;                                                                          % fixation tolerance radius (in dva)
 const.checkfix_rad          =   vaDeg2pix(const.checkfix_rad_dva,scr);                                      % fixation tolerance radius (in pixels)
 const.timeOut               =   2;                                                                          % maximum fixation check time (in seconds)

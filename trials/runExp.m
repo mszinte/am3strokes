@@ -49,7 +49,6 @@ end
 % Initial calibrations
 % --------------------
 if const.tracker
-    fprintf(1,'\tEye tracking instructions - press space or right button-\n');
     eyeLinkClearScreen(el.bgCol);
     eyeLinkDrawText(scr.x_mid,scr.y_mid,el.txtCol,'CALIBRATION INSTRUCTION - PRESS SPACE');
     instructionsIm(scr,const,my_key,sprintf('Calibration'),0);
