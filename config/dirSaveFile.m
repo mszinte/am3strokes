@@ -35,6 +35,7 @@ const.add_output_file       =   sprintf('data/%s/add/%s_task-%s_%s',const.sjct,c
 % Eye data
 const.eyelink_temp_file         =   'XX.edf';
 const.eyelink_local_file        =   sprintf('%s_eyetrack.edf',const.eyetrack_output_file);
+const.eyelink_local_file_end    =   sprintf('%s_eyetrack.edf',const.add_output_file);
 const.eyelink_local_meta        =   sprintf('%s_eyetrack.json',const.eyetrack_output_file);
 const.eyelink_local_meta_fid    =   fopen(const.eyelink_local_meta, 'w');
 
