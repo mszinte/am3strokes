@@ -129,13 +129,16 @@ while nbf <= trial_offset
     if nbf == fix_nbf_onset
         log_txt = sprintf('fix %i onset at %f',t,GetSecs);
         if const.tracker;Eyelink('message','%s',log_txt);end
-    elseif nbf == fix_nbf_offset
+    end
+    if nbf == fix_nbf_offset
         log_txt = sprintf('fix %i offset at %f',t,GetSecs);
         if const.tracker;Eyelink('message','%s',log_txt);end
-    elseif nbf == s1_nbf_onset
+    end
+    if nbf == s1_nbf_onset
         log_txt = sprintf('s1 %i onset at %f',t,GetSecs);
         if const.tracker;Eyelink('message','%s',log_txt);end
-    elseif nbf == s1_nbf_offset
+    end
+    if nbf == s1_nbf_offset
         log_txt = sprintf('s1 %i offset at %f',t,GetSecs);
         if const.tracker;Eyelink('message','%s',log_txt);end
     end
@@ -143,13 +146,16 @@ while nbf <= trial_offset
         if nbf == s2_nbf_onset
             log_txt = sprintf('s2 %i onset at %f',t,GetSecs);
             if const.tracker;Eyelink('message','%s',log_txt);end
-        elseif nbf == s2_nbf_offset
+        end
+        if nbf == s2_nbf_offset
             log_txt = sprintf('s2 %i offset at %f',t,GetSecs);
             if const.tracker;Eyelink('message','%s',log_txt);end
-        elseif nbf == s3_nbf_onset
+        end
+        if nbf == s3_nbf_onset
             log_txt = sprintf('s3 %i onset at %f',t,GetSecs);
             if const.tracker;Eyelink('message','%s',log_txt);end
-        elseif nbf == s3_nbf_offset
+        end
+        if nbf == s3_nbf_offset
             log_txt = sprintf('s3 %i offset at %f',t,GetSecs);
             if const.tracker;Eyelink('message','%s',log_txt);end
         end
