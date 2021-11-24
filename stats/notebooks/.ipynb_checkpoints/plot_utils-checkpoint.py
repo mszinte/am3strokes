@@ -37,7 +37,6 @@ def plotly_template(template_specs):
                                     showlegend=False, 
                                     thetaunit = 'radians'
                                     )]
-
     # Pie plots
     fig_template.data.pie = [go.Pie(showlegend=False,
                                     textposition=["inside","none"],
@@ -74,8 +73,8 @@ def plotly_template(template_specs):
                                     xaxis_hoverformat = '.1f',
                                     
                                     # y axis
-                                    yaxis_visible=False,
-                                    yaxis_linewidth=0,
+                                    yaxis_visible=True,
+                                    yaxis_linewidth=template_specs['axes_width'],
                                     yaxis_color= template_specs['axes_color'],
                                     yaxis_showgrid=False,
                                     yaxis_ticks="outside",
