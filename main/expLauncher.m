@@ -11,7 +11,7 @@
 
 % design idea
 % -----------
-% 3 runs of 540 trials (25:00 min, about 1h15 in total)
+% 6 runs of 270 trials (12:00 min, about 1h15 in total)
 % 2 variables : (1) stim side (2) sequence 
 % Stim side: left vs right
 % Sequences: s1_pos1, s1_pos2, s1_pos3, s1_pos4, s1_pos5, s3up_pos3, s3down_pos3
@@ -20,11 +20,8 @@
 
 % To do
 % -----
-% - check duration of a run
-% - cut it in 6 runs
 % - collect data on me
 % - code analysis in Python
-% - check if latency makes sense, maybe the onset of fixation should be longer
 % - do video
 
 % First settings
@@ -44,8 +41,8 @@ const.tracker           =   1;              % run with eye tracker              
 
 % Run order and number per condition
 % ----------------------------------
-const.numRun            =   3;              % number of run
-const.nb_trials         =   120;            % number of trials per conditions
+const.numRun            =   6;              % number of run
+const.nb_trials         =   60;            % number of trials per conditions
 
 % Desired screen setting
 % ----------------------

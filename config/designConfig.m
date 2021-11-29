@@ -49,7 +49,7 @@ expDes.txt_rand1        =   {'200 ms','220 ms','240 ms','260 ms','280 ms','300 m
 % ======
 expDes.twoR             =   [1:const.post_stroke_steps]';
 expDes.nb_rand2         =   const.post_stroke_steps;
-expDes.txt_rand2        =   {'100 ms','120 ms','140 ms','160 ms','180 ms','200 ms'};
+expDes.txt_rand2        =   {'100 ms','150 ms','200 ms','250 ms','300 ms','350 ms'};
 
 % Rand 3: Spatial jitter X (11 modalities)
 % ======
