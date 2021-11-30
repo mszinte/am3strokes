@@ -40,8 +40,8 @@ const.stroke_nbf            =   round(const.stroke_dur/scr.frame_duration);     
 const.inter_stroke_dur      =   0.020;                                                                      % Inter-stroke duration (in seconds)
 const.inter_stroke_nbf      =   round(const.inter_stroke_dur/scr.frame_duration);                           % Inter-stroke duration (in frames)
 
-const.post_stroke_min_dur   =   0.100;                                                                      % Post-stoke duration min (in seconds)
-const.post_stroke_max_dur   =   0.200;                                                                      % Post-stoke duration max (in seconds)
+const.post_stroke_min_dur   =   0.400;                                                                      % Post-stoke duration min (in seconds)
+const.post_stroke_max_dur   =   0.650;                                                                      % Post-stoke duration max (in seconds)
 const.post_stroke_steps     =   6;                                                                          % Post-stroke duration steps
 const.post_stroke_dur       =   linspace(const.post_stroke_min_dur,const.post_stroke_max_dur, const.post_stroke_steps); % Post-stroke duration (in seconds)
 const.post_stroke_nbf       =   round(const.post_stroke_dur/scr.frame_duration);                            % Post-stroke duration (in frames)
