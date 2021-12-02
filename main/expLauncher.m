@@ -20,8 +20,6 @@
 
 % To do
 % -----
-% - collect data on me
-% - code analysis in Python
 % - do video
 
 % First settings
