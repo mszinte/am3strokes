@@ -17,9 +17,6 @@ function [const] = dirSaveFile(const)
 % ----------------------------------------------------------------------
 
 % Create directories
-if ~isfolder(sprintf('data/%s/func/',const.sjct))
-    mkdir(sprintf('data/%s/func/',const.sjct))
-end
 if ~isfolder(sprintf('data/%s/eyetrack/',const.sjct))
     mkdir(sprintf('data/%s/eyetrack/',const.sjct))
 end
@@ -28,7 +25,7 @@ if ~isfolder(sprintf('data/%s/add/',const.sjct))
 end
 
 % Define directories
-const.dat_output_file       =   sprintf('data/%s/func/%s_task-%s_%s',const.sjct,const.sjct,const.cond1_txt,const.run_txt);
+const.dat_output_file       =   sprintf('data/%s/eyetrack/%s_task-%s_%s',const.sjct,const.sjct,const.cond1_txt,const.run_txt);
 const.eyetrack_output_file  =   sprintf('data/%s/eyetrack/%s_task-%s_%s',const.sjct,const.sjct,const.cond1_txt,const.run_txt);
 const.add_output_file       =   sprintf('data/%s/add/%s_task-%s_%s',const.sjct,const.sjct,const.cond1_txt,const.run_txt);
 
