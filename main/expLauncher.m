@@ -11,7 +11,7 @@
 
 % design idea
 % -----------
-% 12 runs of 140 trials (8:00 min, about 1h30 in total)
+% 6 runs of 140 trials (8:00 min, about 45 min in total)
 % 2 variables : (1) stim side (2) sequence 
 % Stim side: left vs right
 % Sequences: s1_pos1, s1_pos2, s1_pos3, s1_pos4, s1_pos5, s3up_pos3, s3down_pos3
@@ -39,8 +39,8 @@ const.tracker           =   1;              % run with eye tracker              
 
 % Run order and number per condition
 % ----------------------------------
-const.numRun            =   12;             % number of run
-const.nb_trials         =  120;             % number of trials per conditions
+const.numRun            =   6;              % number of run
+const.nb_trials         =  60;              % number of trials per conditions
 
 % Desired screen setting
 % ----------------------
