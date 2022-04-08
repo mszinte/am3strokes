@@ -2,8 +2,8 @@
 %  =============================
 % By :      Martin SZINTE
 % Projet :  AM3stroke
-% With :    Kevin Blaize, Anna Montagnini & Frederic Chavane
-% Version:  1.0
+% With :    Meriam Zid, Kevin Blaize, Anna Montagnini & Frederic Chavane
+% Version:  2.0
 
 % Version description
 % ===================
