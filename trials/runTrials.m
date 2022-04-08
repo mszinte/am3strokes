@@ -99,10 +99,16 @@ while nbf <= trial_offset
     end
     
     % Stroke(s)
+    
     if nbf >= s1_nbf_onset && nbf <= s1_nbf_offset
         % Draw s1
-        Screen('DrawDots', scr.main, stroke_coord(1,:), const.stoke_rad*2, const.white, [], 2);
+        if size(stroke_coord,1) > 1
+            Screen('DrawDots', scr.main, stroke_coord(1,:), const.stoke_rad*2, const.white, [], 2);
+        else
+            Screen('DrawDots', scr.main, stroke_coord(1,:), const.stoke_rad*2, const.red, [], 2);
+        end 
     end
+        
     if size(stroke_coord,1) > 1
         if nbf >= s2_nbf_onset && nbf <= s2_nbf_offset
             % Draw s2
@@ -110,7 +116,7 @@ while nbf <= trial_offset
         end
         if nbf >= s3_nbf_onset && nbf <= s3_nbf_offset
             % Draw s3
-            Screen('DrawDots', scr.main, stroke_coord(3,:), const.stoke_rad*2, const.white, [], 2);
+            Screen('DrawDots', scr.main, stroke_coord(3,:), const.stoke_rad*2, const.red, [], 2);
         end
     end
     

@@ -25,7 +25,8 @@ rng('shuffle');
 %% Colors
 const.white                 =   [255,255,255];                                                              % White
 const.black                 =   [0,0,0];                                                                    % Black
-const.gray                  =   [90,90,90];                                                              % Gray
+const.gray                  =   [90,90,90];                                                                 % Gray
+const.red                   =   [200,0,0];                                                                  % Red
 const.background_color      =   const.gray;                                                                 % Background color
 
 %% Time parameters
