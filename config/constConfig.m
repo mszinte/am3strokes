@@ -36,9 +36,9 @@ const.ini_fix_steps         =   11;                                             
 const.ini_fix_dur           =   linspace(const.ini_fix_min_dur,const.ini_fix_max_dur,const.ini_fix_steps);  % Initial fixation (in seconds)
 const.ini_fix_nbf           =   round(const.ini_fix_dur/scr.frame_duration);                                % Initial fixation (in frames)
 
-const.stroke_dur            =   0.010;                                                                      % Stroke duration (in seconds)
+const.stroke_dur            =   0.020;                                                                      % Stroke duration (in seconds)
 const.stroke_nbf            =   round(const.stroke_dur/scr.frame_duration);                                 % Stroke duration (in frames)
-const.inter_stroke_dur      =   0.020;                                                                      % Inter-stroke duration (in seconds)
+const.inter_stroke_dur      =   0.040;                                                                      % Inter-stroke duration (in seconds)
 const.inter_stroke_nbf      =   round(const.inter_stroke_dur/scr.frame_duration);                           % Inter-stroke duration (in frames)
 
 const.post_stroke_min_dur   =   0.400;                                                                      % Post-stoke duration min (in seconds)

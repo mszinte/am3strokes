@@ -3,7 +3,7 @@
 % By :      Martin SZINTE
 % Projet :  AM3stroke
 % With :    Meriam Zid, Kevin Blaize, Anna Montagnini & Frederic Chavane
-% Version:  2.0
+% Version:  3.0
 
 % Version description
 % ===================
@@ -11,12 +11,14 @@
 
 % design idea
 % -----------
-% 6 runs of 140 trials (8:00 min, about 45 min in total)
+% 3 runs of 140 trials (8:00 min, about 45 min in total)
 % 2 variables : (1) stim side (2) sequence 
 % Stim side: left vs right
 % Sequences: s1_pos1, s1_pos2, s1_pos3, s1_pos4, s1_pos5, s3up_pos3, s3down_pos3
 % 4 random values : (1) initial fixation duratin (2) post-stim duration (3) jitter x (4) jitter y
 % Monocular recording
+% Interstroker = 40 ms (10 before)
+% Stroke = 20 ms (10 before)
 
 % To do
 % -----
@@ -39,8 +41,8 @@ const.tracker           =   1;              % run with eye tracker              
 
 % Run order and number per condition
 % ----------------------------------
-const.numRun            =   6;              % number of run
-const.nb_trials         =  60;              % number of trials per conditions
+const.numRun            =   3;              % number of run
+const.nb_trials         =  30;              % number of trials per conditions
 
 % Desired screen setting
 % ----------------------
