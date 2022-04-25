@@ -8,6 +8,7 @@
 % Version description
 % ===================
 % 3 stokes apparent motion task with participants having to saccade towards the lastly presented stoke
+% version adapted for AAP courses
 
 % design idea
 % -----------
