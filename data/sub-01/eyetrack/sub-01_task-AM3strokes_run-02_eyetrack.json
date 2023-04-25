@@ -1,0 +1,19 @@
+{
+    "TaskName":"AM3strokes", 
+    "InstitutionName":"Institut des Neurosciences de la Timone", 
+    "InstitutionAdress":"12 avenue Jean Moulin, 13008 Marseille, France", 
+    "Manufacturer":"SR-Research", 
+    "ManufacturersModelName":"EYELINK II CL v5.12 May 12 2017", 
+    "TaskDescription":"Saccade to static and 3 strokes apparent motion target", 
+    "Instructions":"When the fixation dot disappears, move your eyes towards the last dot shown in periphery.", 
+    "SamplingFrequency":1000, 
+    "SampleCoordinateUnit":"pixel", 
+    "SampleCoordinateSystem":"gaze-on-screen", 
+    "EnvironmentCoordinates":"top-left", 
+    "StartMessage":"RECORD_START", 
+    "EndMessage":"Left", 
+    "ScreenSize":[69.6,39.1], 
+    "ScreenResolution":[1920,1080], 
+    "ScreenDistance":60, 
+    "PupilPositionType":"raw pupil position on screen"
+}
