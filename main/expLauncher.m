@@ -2,8 +2,8 @@
 %  =============================
 % By :      Martin SZINTE
 % Projet :  AM3stroke
-% With :    Meriam Zid, Kevin Blaize, Anna Montagnini & Frederic Chavane
-% Version:  2.0
+% With :    Anna Montagnini & Frederic Chavane
+% Version:  aap2023
 
 % Version description
 % ===================
@@ -15,12 +15,9 @@
 % 2 variables : (1) stim side (2) sequence 
 % Stim side: left vs right
 % Sequences: s1_pos1, s1_pos2, s1_pos3, s1_pos4, s1_pos5, s3up_pos3, s3down_pos3
-% 4 random values : (1) initial fixation duratin (2) post-stim duration (3) jitter x (4) jitter y
+% 4 random values : (1) initial fixation duration (2) post-stim duration (3) jitter x (4) jitter y
 % Monocular recording
 
-% To do
-% -----
-% - do video
 
 % First settings
 % --------------
