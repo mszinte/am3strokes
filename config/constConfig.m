@@ -21,7 +21,6 @@ function [const]=constConfig(scr,const)
 rng('default');
 rng('shuffle');
 
-
 %% Colors
 const.white                 =   [255,255,255];                                                              % White
 const.black                 =   [0,0,0];                                                                    % Black
